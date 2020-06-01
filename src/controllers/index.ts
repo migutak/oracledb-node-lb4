@@ -7,3 +7,7 @@ export * from './creditbuildup.controller';
 export * from './nocreditbuildup.controller';
 export * from './demandsdue.controller';
 export * from './demandsduecc.controller';
+export * from './gridcreditcardszerobal.controller';
+export * from './griddueforrelegation.controller';
+export * from './otheraccs.controller';
+export * from './collaterals.controller';

@@ -1,5 +1,7 @@
 import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
+import {HealthComponent} from '@loopback/extension-health';
+import {MetricsComponent} from '@loopback/extension-metrics';
 import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
 import {RestExplorerBindings, RestExplorerComponent} from '@loopback/rest-explorer';
@@ -15,6 +17,9 @@ export class OracledbNodeLb4Application extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
+    // added for prometheus metrics
+    this.component(MetricsComponent);
+    this.component(HealthComponent);
 
     // Set datasource based off environment
     const db_host = process.env.DB_HOST || '127.0.0.1';
