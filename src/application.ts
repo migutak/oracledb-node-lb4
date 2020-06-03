@@ -26,7 +26,7 @@ export class OracledbNodeLb4Application extends BootMixin(
     const db_port = process.env.DB_PORT || 1521;
     const db_user = process.env.DB_USERNAME || 'ecol';
     const db_pass = process.env.DB_PASSWORD || 'ecol';
-    const database = process.env.MONGO_DATABASE || 'ORCLCDB.localdomain';
+    const database = process.env.DB_DATABASE || 'ORCLCDB.localdomain';
 
     this.bind('datasources.config.oracle').to({
       name: 'oracle',

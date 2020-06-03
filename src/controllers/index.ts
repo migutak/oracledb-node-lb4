@@ -11,3 +11,5 @@ export * from './gridcreditcardszerobal.controller';
 export * from './griddueforrelegation.controller';
 export * from './otheraccs.controller';
 export * from './collaterals.controller';
+export * from './tbl-relegations.controller';
+export * from './relegationapprovals.controller';

@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  oracledb:
+    image: quay.io/migutak/oracledb-apis-lb4
+    container_name: oracledb
+    restart: on-failure
+    environment:
+      - DB_HOST=172.16.20.2
+      - DB_PORT=1521
+      - DB_USER=ecol
+      - DB_PASSWORD=DsQSnttm_1
+      - DB_DATABASE=ECOLTST
+    ports:
+      - "6001:6001"
