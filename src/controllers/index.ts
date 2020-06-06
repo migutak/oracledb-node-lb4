@@ -13,3 +13,5 @@ export * from './otheraccs.controller';
 export * from './collaterals.controller';
 export * from './tbl-relegations.controller';
 export * from './relegationapprovals.controller';
+export * from './activeptps.controller';
+export * from './writeoffapprovals.controller';
