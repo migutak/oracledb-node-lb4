@@ -15,3 +15,4 @@ export * from './tbl-relegations.controller';
 export * from './relegationapprovals.controller';
 export * from './activeptps.controller';
 export * from './writeoffapprovals.controller';
+export * from './potentialwriteoffs.controller';
