@@ -16,3 +16,4 @@ export * from './relegationapprovals.controller';
 export * from './activeptps.controller';
 export * from './writeoffapprovals.controller';
 export * from './potentialwriteoffs.controller';
+export * from './tqall.controller';
