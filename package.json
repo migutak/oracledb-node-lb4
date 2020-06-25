@@ -54,6 +54,8 @@
     "@loopback/rest": "^5.0.1",
     "@loopback/rest-explorer": "^2.2.2",
     "@loopback/service-proxy": "^2.3.0",
+    "loopback-api-cache": "^1.0.3",
+    "loopback-connector-kv-redis": "^3.0.3",
     "loopback-connector-oracle": "^4.5.2",
     "tslib": "^1.10.0"
   },

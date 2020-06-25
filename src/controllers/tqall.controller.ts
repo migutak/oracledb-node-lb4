@@ -4,25 +4,23 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
+  del, get,
+  getModelSchemaRef, param,
+  patch, post,
   put,
-  del,
-  requestBody,
+  requestBody
 } from '@loopback/rest';
+import {cache} from 'loopback-api-cache';
 import {Tqall} from '../models';
 import {TqallRepository} from '../repositories';
 
 export class TqallController {
   constructor(
     @repository(TqallRepository)
-    public tqallRepository : TqallRepository,
+    public tqallRepository: TqallRepository,
   ) {}
 
   @post('/tqall', {
@@ -39,7 +37,7 @@ export class TqallController {
         'application/json': {
           schema: getModelSchemaRef(Tqall, {
             title: 'NewTqall',
-            
+
           }),
         },
       },
@@ -106,6 +104,8 @@ export class TqallController {
     return this.tqallRepository.updateAll(tqall, where);
   }
 
+  // caching response for 60 seconds
+  @cache(60)
   @get('/tqall/{id}', {
     responses: {
       '200': {

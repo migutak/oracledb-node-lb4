@@ -4,17 +4,21 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where,
+  Where
 } from '@loopback/repository';
 import {
-  post,
-  param,
-  get,
-  getModelSchemaRef,
-  patch,
+  del, get,
+  getModelSchemaRef, param,
+
+
+  patch, post,
+
+
+
+
   put,
-  del,
-  requestBody,
+
+  requestBody
 } from '@loopback/rest';
 import {TblRelegations} from '../models';
 import {TblRelegationsRepository} from '../repositories';
@@ -22,10 +26,10 @@ import {TblRelegationsRepository} from '../repositories';
 export class TblRelegationsController {
   constructor(
     @repository(TblRelegationsRepository)
-    public tblRelegationsRepository : TblRelegationsRepository,
+    public tblRelegationsRepository: TblRelegationsRepository,
   ) {}
 
-  @post('/tbl-relegations', {
+  @post('/nodeapi/tbl-relegations', {
     responses: {
       '200': {
         description: 'TblRelegations model instance',
@@ -49,7 +53,7 @@ export class TblRelegationsController {
     return this.tblRelegationsRepository.create(tblRelegations);
   }
 
-  @get('/tbl-relegations/count', {
+  @get('/nodeapi/tbl-relegations/count', {
     responses: {
       '200': {
         description: 'TblRelegations model count',
@@ -63,7 +67,7 @@ export class TblRelegationsController {
     return this.tblRelegationsRepository.count(where);
   }
 
-  @get('/tbl-relegations', {
+  @get('/nodeapi/tbl-relegations', {
     responses: {
       '200': {
         description: 'Array of TblRelegations model instances',
@@ -84,7 +88,7 @@ export class TblRelegationsController {
     return this.tblRelegationsRepository.find(filter);
   }
 
-  @patch('/tbl-relegations', {
+  @patch('/nodeapi/tbl-relegations', {
     responses: {
       '200': {
         description: 'TblRelegations PATCH success count',
@@ -106,7 +110,7 @@ export class TblRelegationsController {
     return this.tblRelegationsRepository.updateAll(tblRelegations, where);
   }
 
-  @get('/tbl-relegations/{id}', {
+  @get('/nodeapi/tbl-relegations/{id}', {
     responses: {
       '200': {
         description: 'TblRelegations model instance',
@@ -125,7 +129,7 @@ export class TblRelegationsController {
     return this.tblRelegationsRepository.findById(id, filter);
   }
 
-  @patch('/tbl-relegations/{id}', {
+  @patch('/nodeapi/tbl-relegations/{id}', {
     responses: {
       '204': {
         description: 'TblRelegations PATCH success',
@@ -146,7 +150,7 @@ export class TblRelegationsController {
     await this.tblRelegationsRepository.updateById(id, tblRelegations);
   }
 
-  @put('/tbl-relegations/{id}', {
+  @put('/nodeapi/tbl-relegations/{id}', {
     responses: {
       '204': {
         description: 'TblRelegations PUT success',
@@ -160,7 +164,7 @@ export class TblRelegationsController {
     await this.tblRelegationsRepository.replaceById(id, tblRelegations);
   }
 
-  @del('/tbl-relegations/{id}', {
+  @del('/nodeapi/tbl-relegations/{id}', {
     responses: {
       '204': {
         description: 'TblRelegations DELETE success',
