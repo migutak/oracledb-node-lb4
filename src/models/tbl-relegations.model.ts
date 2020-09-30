@@ -122,7 +122,7 @@ export class TblRelegations extends Entity {
   requestby?: string;
 
   @property({
-    type: 'date',
+    type: 'string',
   })
   approvaldate?: string;
 
@@ -140,6 +140,11 @@ export class TblRelegations extends Entity {
     type: 'string',
   })
   approved?: string;
+
+  @property({
+    type: 'string',
+  })
+  newrrocode?: string;
 
   @property({
     type: 'date',

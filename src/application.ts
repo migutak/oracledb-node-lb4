@@ -22,11 +22,11 @@ export class OracledbNodeLb4Application extends BootMixin(
     this.component(HealthComponent);
 
     // Set datasource based off environment
-    const db_host = process.env.DB_HOST || '127.0.0.1';
-    const db_port = process.env.DB_PORT || 1521;
-    const db_user = process.env.DB_USERNAME || 'ecol';
-    const db_pass = process.env.DB_PASSWORD || 'ecol';
-    const database = process.env.DB_DATABASE || 'ORCLCDB.localdomain';
+    const db_host = process.env.DBHOST || '127.0.0.1';
+    const db_port = process.env.DBPORT || 1521;
+    const db_user = process.env.DBUSERNAME || 'ecol';
+    const db_pass = process.env.DBPASSWORD || 'ecol';
+    const database = process.env.DBDATABASE || 'ORCLCDB.localdomain';
 
     this.bind('datasources.config.oracle').to({
       name: 'oracle',

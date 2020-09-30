@@ -13,9 +13,9 @@ import {
   put,
   requestBody
 } from '@loopback/rest';
-import {cache} from 'loopback-api-cache';
 import {Tqall} from '../models';
 import {TqallRepository} from '../repositories';
+
 
 export class TqallController {
   constructor(
@@ -105,7 +105,6 @@ export class TqallController {
   }
 
   // caching response for 60 seconds
-  @cache(60)
   @get('/tqall/{id}', {
     responses: {
       '200': {
